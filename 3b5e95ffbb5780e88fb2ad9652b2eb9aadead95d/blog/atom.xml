@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog</id>
-    <title>Games Programming Blog</title>
+    <title>GameDev Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog"/>
-    <subtitle>Games Programming Blog</subtitle>
+    <subtitle>GameDev Blog</subtitle>
     <icon>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/img/web_icon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
