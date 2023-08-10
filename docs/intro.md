@@ -18,10 +18,6 @@ This documentation is part of the **University of Bolton**, (BSc) Games Programm
 </iframe>
 
 
-
-
-
-
 ## Basic Info
 
 This site is under development! 

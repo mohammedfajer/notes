@@ -23,7 +23,7 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
-  title: 'Games Programming',
+  title: 'GameDev',
   tagline: '',
   favicon: 'img/web_icon.ico',
 
@@ -59,7 +59,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',          
+            'https://github.com/mohammedfajer/notes',          
         
             remarkPlugins: [math],
             rehypePlugins: [katex],
@@ -70,7 +70,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/mohammedfajer/notes',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -85,7 +85,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Games Programming',
+        title: 'Game Development',
         logo: {
           alt: 'My Site Logo',
           src: 'img/web_icon_2.svg',
@@ -99,7 +99,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/mohammedfajer/notes',
             label: 'GitHub',
             position: 'right',
           },
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/mohammedfajer/notes',
               },
             ],
           },
