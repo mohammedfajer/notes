@@ -24,14 +24,14 @@ const config = {
     },
   ],
   title: 'GameDev',
-  tagline: '',
+  tagline: 'Welcome to Bolton\'s University Games Programming Learning Hub!',
   favicon: 'img/web_icon.ico',
 
   // Set the production url of your site here
-  url: process.env.WIKI_URL,  // 'https://your-docusaurus-test-site.com',
+  url: 'https://your-docusaurus-test-site.com',  //process.env.WIKI_URL, 'https://your-docusaurus-test-site.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.WIKI_BASE_URL, //'/',
+  baseUrl: '/', //  process.env.WIKI_BASE_URL '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -83,7 +83,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/', // 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Game Development',
         logo: {
@@ -108,7 +108,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
+         /*  {
             title: 'Docs',
             items: [
               {
@@ -116,25 +116,25 @@ const config = {
                 to: '/docs/intro',
               },
             ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
+          }, */
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //   ],
+          // },
+          /* {
             title: 'More',
             items: [
               {
@@ -146,9 +146,9 @@ const config = {
                 href: 'https://github.com/mohammedfajer/notes',
               },
             ],
-          },
+          }, */
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Mohammed Fajer, University of Bolton. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Mohammed Fajer, University of Bolton.`, //Built with Docusaurus.,
       },
       prism: {
         theme: lightCodeTheme,
