@@ -4,7 +4,7 @@
         <title>GameDev Blog</title>
         <link>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog</link>
         <description>GameDev Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Welcome]]></title>
             <link>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/welcome</link>
             <guid>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/welcome</guid>
-            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 10 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Hello, and welcome aboard to Bolton Games Programming Learning Hub! Here you will find the learning resources that supplement the week by week material provided on Minerva.]]></description>
             <content:encoded><![CDATA[<p>Hello, and welcome aboard to <strong>Bolton Games Programming Learning Hub</strong>! Here you will find the learning resources that supplement the week by week material provided on Minerva.</p><p><img loading="lazy" alt="test" src="/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/assets/images/intro-e79dede99602746b620cf5df5451d077.png" width="1048" height="359" class="img_ev3q"></p>]]></content:encoded>
             <category>hello</category>
