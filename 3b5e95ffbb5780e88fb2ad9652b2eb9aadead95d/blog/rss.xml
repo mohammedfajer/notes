@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>GameDev Blog</title>
-        <link>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog</link>
+        <link>https://your-docusaurus-test-site.com/blog</link>
         <description>GameDev Blog</description>
         <lastBuildDate>Tue, 10 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,11 +10,11 @@
         <language>en</language>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/welcome</link>
-            <guid>https://mohammedfajer.github.io/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/welcome</guid>
+            <link>https://your-docusaurus-test-site.com/blog/welcome</link>
+            <guid>https://your-docusaurus-test-site.com/blog/welcome</guid>
             <pubDate>Tue, 10 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Hello, and welcome aboard to Bolton Games Programming Learning Hub! Here you will find the learning resources that supplement the week by week material provided on Minerva.]]></description>
-            <content:encoded><![CDATA[<p>Hello, and welcome aboard to <strong>Bolton Games Programming Learning Hub</strong>! Here you will find the learning resources that supplement the week by week material provided on Minerva.</p><p><img loading="lazy" alt="test" src="/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/assets/images/intro-e79dede99602746b620cf5df5451d077.png" width="1048" height="359" class="img_ev3q"></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>Hello, and welcome aboard to <strong>Bolton Games Programming Learning Hub</strong>! Here you will find the learning resources that supplement the week by week material provided on Minerva.</p><p><img loading="lazy" alt="test" src="/assets/images/intro-e79dede99602746b620cf5df5451d077.png" width="1048" height="359" class="img_ev3q"></p>]]></content:encoded>
             <category>hello</category>
         </item>
     </channel>
