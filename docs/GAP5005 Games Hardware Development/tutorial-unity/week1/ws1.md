@@ -488,7 +488,7 @@ Point lights are secondary to your Unity scene, and you will need to add them. G
 
 ### Spot Light
 
-Like point lights, spotlights are secondary to your scene, and must be added manually; you don't need to add one to your scene, this is simply an explanation. The light emitted from a spotlight is constrained to an angle, usually in a cone shape; they are a coom selection for torches and streetlights.
+Like point lights, spotlights are secondary to your scene, and must be added manually; you don't need to add one to your scene, this is simply an explanation. The light emitted from a spotlight is constrained to an angle, usually in a cone shape; they are a common selection for torches and streetlights.
 
 
 ## Playing/Pausing the Game
@@ -520,7 +520,7 @@ It is important to note that whilst you are in play/pause mode, any changes to y
 
 If you need to modify values at runtime to save time, you can do so by using the following technique:
 
-Click the play button and immediately pause the game. Making sure your Scene view is active, select your point light and turn the intensity up to 10; you will see the changes occur. Now, click the play button again to exit play mode, and notice how your intensity resets back to its original value. Click play again and once again change the intensity to 10,, but this time, right-click the **Light** component in the Inspector Panel and click **Copy Component**. Exit play/pause mode, right-click the **Light** component, and then click **Paste Component Values**. This is how to edit components in real-time, which is great for iteration.
+Click the play button and immediately pause the game. Making sure your Scene view is active, select your point light and turn the intensity up to 10; you will see the changes occur. Now, click the play button again to exit play mode, and notice how your intensity resets back to its original value. Click play again and once again change the intensity to 10, but this time, right-click the **Light** component in the Inspector Panel and click **Copy Component**. Exit play/pause mode, right-click the **Light** component, and then click **Paste Component Values**. This is how to edit components in real-time, which is great for iteration.
 
 
 ## Saving Projects
@@ -548,7 +548,7 @@ Double click the **Models** folder, right-click inside the folder, and navigate:
 
 Once you've done that, your create will be imported into Unity. Follow the same process for the JPG file which came with the download, but of course, import it to the **Textures** folder.
 
-Once this has been achieved, go to your **Models** folder and drag the crate into your scene, then navigate to your **Textures** folder and drag the texture onto the crate in the scene. You have successfully imported and integrated your first model. Go ahead and create a prefab of the create just for practice and drag a few of them into your scene (if prompted, select **Prefab Variant**).
+Once this has been achieved, go to your **Models** folder and drag the crate into your scene, then navigate to your **Textures** folder and drag the texture onto the crate in the scene. You have successfully imported and integrated your first model. Go ahead and create a prefab of the crate just for practice and drag a few of them into your scene (if prompted, select **Prefab Variant**).
 
 
 ### Importing a Unity Package
