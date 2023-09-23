@@ -346,7 +346,7 @@ Before moving on, go to your Hierarchy Panel and select all your prefabs (12 in 
 <img src={UNITY_MULTIPLE_SELECT} width={"40%"} alt="Unity Multiple Select" />
 </div>
 
-Notice ow your cube objects in the Hierarchy Panel have had their name updated, which is better, but still a little disorganized. To organize your Hierarchy Panel, a common trick is to navigate to:
+Notice how your cube objects in the Hierarchy Panel have had their name updated, which is better, but still a little disorganized. To organize your Hierarchy Panel, a common trick is to navigate to:
 
 **GameObject > Create Empty**
 
@@ -382,7 +382,7 @@ Our scene view is probably looking a little disorganized at this point, so we ne
 <img src={UNITY_SCENE_DISORGANIZED} width={"80%"} alt="Unity Disorganized Scene" />
 </div>
 
-We need to place these cubes in a 3x4 grid, and we weed them to connect together seamlessly. To do this, we could drag and place them sing the move tool, but that would take a very long time, and wouldn't be all that accurate. Instead of doing this, go ahead and select the move tool at the top, and select any of your cubes in the scene.
+We need to place these cubes in a 3x4 grid, and we weed them to connect together seamlessly. To do this, we could drag and place them using the move tool, but that would take a very long time, and wouldn't be all that accurate. Instead of doing this, go ahead and select the move tool at the top, and select any of your cubes in the scene.
 
 Now, make sure you remember this technique as it will be extremely useful for you. Hold down the **V** key on the keyboard, and hover over the selected cube; you will notice that the pivot is snapping around the cube. What Unity is doing here is making the pivot snap to vertices found on the cube, which is very handy for accurate snapping.
 
@@ -425,7 +425,7 @@ Ignoring perspective, we have an even gap between each of the cube rows now. If 
 <img src={UNITY_SNAPPING_6} width={"40%"} alt="Unity Snapping 6" />
 </div>
 
-Once selected, a window will open up which allows you yo specify the distance at which you wish to snap in the `x`, `y` and `z` axis.
+Once selected, a window will open up which allows you to specify the distance at which you wish to snap in the `x`, `y` and `z` axis.
 
 ## Camera
 As with any game engine, the use of cameras is extremely important, as without them, we'd not be able to render/play our games. Unity is no different. When you create a new Unity project, the default scene that you are given comes with a **Main Camera** `GameObject`, which you can see in your Hierarchy Panel - go ahead and find it and select it. You will notice that when you select it, you will get a little preview window in the bottom-right of the scene view which shows us what our camera will look like in the game:
