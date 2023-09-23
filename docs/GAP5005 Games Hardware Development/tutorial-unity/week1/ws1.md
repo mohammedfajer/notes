@@ -121,7 +121,7 @@ Now that we are happy with the layout, let us look at adding some objects into o
 
 With **Scene** selected, navigate to: **GameObject > 3D Object > Cube**.
 
-Once yoh have selected **Cube** you will notice that it appears in your scene view. You can click the **F** key to get a closer look at your newly created object.
+Once you have selected **Cube** you will notice that it appears in your scene view. You can click the **F** key to get a closer look at your newly created object.
 
 
 <div class="image-container">
@@ -152,7 +152,7 @@ The navigation tools in Unity can be found in the left section of the scene:
 <img src={UNITY_HAND_TOOL} width={"30%"} alt="Unity Editor Hand Tool" />
 </div>
 
-The hand tool allows you to pan `left/right/up/down` across your screen to give you a better view of your game elements. You can use the **Q** shortcut key to select this tool.
+The hand tool allows you to pan `left/right/up/down` across your screen to give you a better view of your game elements. You can use the **Q** shortcut key to select this tool. If you click the right button on your mouse you can then be able to pan across your screen.
 
 ### Move Tool
 
@@ -286,7 +286,7 @@ See how your cube reacts in your scene as you toggle it on and off. You will not
 
 ### Box Collider
 
-Slightly easier to understand is the **Box Collider**, and it really does do what it says on the tin - it manges the object's collection; you can also make it a trigger, but we'll look at that in another lesson. For now, toggle it on and off like you did with the **Mesh Renderer** and notice how it simply disables the **Box Collider**. You also have access to the size of the collider in this **Component**, as well as how it is positioned relative to the cube. Have a play around with these settings to see how they behave. Once you're happy, make sure that **Center** is set to `0,0,0` and that **Size** is set to `1,1,1` (the default values).
+Slightly easier to understand is the **Box Collider**, and it really does do what it says on the tin - it manges the object's collision; you can also make it a trigger, but we'll look at that in another lesson. For now, toggle it on and off like you did with the **Mesh Renderer** and notice how it simply disables the **Box Collider**. You also have access to the size of the collider in this **Component**, as well as how it is positioned relative to the cube. Have a play around with these settings to see how they behave. Once you're happy, make sure that **Center** is set to `0,0,0` and that **Size** is set to `1,1,1` (the default values).
 
 
 
@@ -321,7 +321,7 @@ Rename your prefab in the Project Panel to **OurFirstPrefab**.
 <img src={UNITY_CUBE_PREFAB} width={"100%"} alt="Cube Prefab" />
 </div>
 
-Once you have done that, delete your cube from the Hierarchy Panel (do not delete the prefab in the Project Panel - your cube wil go missing from the scene, that is fine). Delete everything else from the Hierarchy Panel so that you are left with a Main Camera, and a Directional Light.
+Once you have done that, delete your cube from the Hierarchy Panel (do not delete the prefab in the Project Panel - your cube will go missing from the scene, that is fine). Delete everything else from the Hierarchy Panel so that you are left with a Main Camera, and a Directional Light.
 
 Once you are happy, go ahead and drag 12 of your prefabs into the Scene view.
 
