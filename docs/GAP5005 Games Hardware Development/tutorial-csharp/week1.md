@@ -12,6 +12,12 @@ import BITWISE_OPERATORS from './img/bitwise_operators.png';
 import CLASS from './img/class.png';
 import STATIC_MODIFIER from './img/static_modifier.png';
 import STATIC_MODIFIER2 from './img/static_modifier2.png';
+import ESCAPE_CHARACTERS from './img/escape_characters.png';
+import REF_VAL from './img/refval.png';
+import CONTROL_STRUCTURES from './img/control_structures.png';
+import MULTI_DIMENSION_ARRAYS from './img/mda.png';
+import JAGGED from './img/jagged.png';
+import ARRAY_TYPE from './img/array.png';
 
 # C# Basics Part 1
 In this tutorial we will learn the basics of C#. This is very high quality tutorial, a comprehensive and deep understanding of C# will be obtained by the end of this 3 part tutorial pages.
@@ -602,7 +608,73 @@ int[] numbers = new int[3] {1,2,3};
 
 ### Strings
 
+In this section will explore the following topics, later on, we will learn more about strings:
 
+- What is a string
+- How to create strings
+- Escape characters and verbatim strings
+
+**string** is a sequence of characters. e.g. `"Hello World"`.
+
+#### Creating Strings
+There are many ways to create strings in C#.
+
+Using String Literals.
+
+```csharp
+string firstName = "Mohammed";
+string lastName = "Fajer";
+```
+Using String Concatenation.
+
+```csharp
+string name = firstName + " " + lastName;
+```
+Sometimes it can be hard if you are using string concatenation to determine what is what, so there is another way to concatenate strings that can be more suitable in certain sitatuins.
+
+Using String Formats
+```csharp
+string name = string.Format("{0} {1}", firstName, lastName);
+```
+`Format(...)` is a static method of the string class.
+
+Using String Join
+```csharp
+var numbers = new int[3] {1,2,3};
+string list = string.Join(",", numbers); // 1,2,3
+```
+Calling `Join(...)` static method of the string class passing the separator and the list of numbers to combine.
+
+#### String Elements
+
+```csharp
+string name = "Mohammed";
+char firstChar = name[0];
+
+name[0] = 'm'; // will not be compiled. not allowed as strings are immutable.
+
+```
+
+#### Strings are Immutable
+- Once you create them, you cannot change them.
+
+
+#### Escape Characters
+
+<div class="image-container">
+<img src={ESCAPE_CHARACTERS} width={"50%"} alt="Escape Characters" />
+</div>
+
+There are special characters that have different meanings. Escaping special characters using `\`. 
+
+#### Verbatim Strings
+
+```cs
+string path = "c:\\projects\\project1\\folder1"; // Looks messy
+
+// Verbatim Strings
+string newPath = @"c:\projects\project1\folder1";
+```
 
 ### Enums
 
@@ -684,32 +756,524 @@ namespace CSharpFundamentals
 
 
 ### Reference Types and Value Types
+In C# we have two main types in which we create new types. We have `classes` and `structures`. All primitive types are structures, custom structures. Arrays, Strings are classes, custom classes. They are treated differently at runtime in terms of memory management.
 
+
+<div class="image-container">
+<img src={REF_VAL} width={"50%"} alt="Reference and Value Types" />
+</div>
+
+  Structures are what we call **value types** and classes are **reference types**. Value types are allocated on the stack memory section at compile time. This memory allocation done automatically, immediately removed when out of scope by runtime or CLR. With reference types, the programmer is responsible for allocation at runtime, memory is allocated on the heap section of memory, through the process of garbage collection by runtime or CLR, all unused object and reference types get cleaned after some time by this process.
+
+
+#### Copying Value Types
+```csharp
+using System;
+
+namespace CSharpFundamentals
+{
+  public struct Coords 
+  {
+    public int X;
+    public int Y;
+
+    public Coords(int x, int y)
+    {
+      X = x;
+      Y = y;
+    }
+
+    public override string ToString() => $"({X}, {Y})";
+  }
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      var a = new Coords(1,2);
+      var b = a;
+      b.X = 66;
+      Console.WriteLine(a); // (1, 2)
+      Console.WriteLine(b); // (66, 2)
+    }
+  }
+}
+
+```
+
+As you can see from the above example, since structure is a value type, a was copied into b. This is known as a value type assignment, where the values of the fields in `a` are copied to the corresponding fields in `b`. This behavior is due to the fact we are using value types in C#. Value types hold their data directly and are stored on the stack, example include, primitive types (int, float, etc.) and structs. Another important note is the use of `new` keyword with structures, even though we have used the `new` keyword when creating instances of the `Coords` structure, structs are still value types. The `new` keyword is used to call the constructor of a struct, but the memory allocation and management behavior for structs remains that of value types (stack allocation).
 
 
 ## Control Flow
+In this section will explore conditional and iteration statements in C#. We use these statements to control the `flow` of the program.
+
+<div class="image-container">
+<img src={CONTROL_STRUCTURES} width={"50%"} alt="Reference and Value Types" />
+</div>
+
 
 ### Conditional Statements
 
-### Iteration Statements
+We will take a look at C# language constructs that are used for controlling the program execution. The following constructs will be explored:
 
-### Random Class
+- If / else statements
+- Switch / case statements
+- Conditional operator : A ? B : C
+
+
+#### If / else
+A basic structure looks something like:
+```cs
+if(condition)
+  someStatement
+
+else if(anotherCondition)
+  anotherStatement
+
+else
+  yetAnotherStatement
+``` 
+The statements in the `if` and `else if` are only executed if the conditions are true in that case. The `else` is executed if none of the conditions before were true. 
+
+If we have one or more than one line of code we need to enclose them with curly braces:
+
+```cs
+if(condition)
+{
+  someStatements
+}
+else
+{
+  otherStatements
+}
+```
+
+Another thing, we can do is `nest` if statements together called nested-if statements.
+
+```cs
+if(condition)
+{
+  if(anotherCondition)
+    ...
+  else
+    ...
+}
+```
+Generally, its a bad practice to use multiple nested if statements as it result in code that is hard to read, hard to understand, hard to maintain and hard to test, that is what we call a **code smell** and that is something you should avoid at all times.
+
+
+#### Switch / case 
+Switch is slightly different than if, `if statements` we usually have a condition that is evaluated and if its true, some piece of code will be executed, With switch however, we have a variable that we compare its value with different values. 
+
+
+
+```cs
+switch(role)
+{
+  case Role.Admin:
+    ...
+    break;
+  case Role.Moderator:
+    ...
+    break;
+  default:
+    ...
+    break;
+}
+```
+
+:::note
+Each `case` statement is terminated by **break** statement. If none of the cases is true, then the default block/case is executed. 
+:::
+
+
+### Iteration Statements
+Iteration statements are used for repeatedly executing a sequence of statements. In C# there is four iteration statements:
+- For loops
+- Foreach loops
+- While loops
+- Do-While loops
+
+Let us now examine the syntax of each iteration construct.
+
+#### For Loops
+For loops has three parts `<initialization clause> ; <condition clause> ; <iteration clause (increment/decrement) counter variable>`.
+```cs
+for(var i = 0; i < 10; i++)
+{
+  ...
+}
+```
+
+#### Foreach Loops
+Foreach is used to iterate over elements of an enumerable object. What does `enumerable` means ?  in plain language, anything that has some kind of list or array nature. For example, strings are a sequence of characters, so strings are enumerable, the array type also enumerable. We can do that with for loop but with foreach is easier and cleaner. The syntax `<local variable> in <list or object we are iterating>`.
+
+```cs
+int[] numbers = new int[3] {1,2,3};
+foreach (var number in numbers)
+{
+  ...
+}
+```
+
+#### While Loops
+
+In C# we also have while loops.
+
+:::note
+The syntax looks something like:
+```
+<initialization clause>
+while (<condition clause>)
+{
+  ...
+  <iteration clause (increment/decrement) to get closer to condition>
+}
+```
+:::
+
+
+```cs
+while(i < 10)
+{
+  ...
+  i++;
+}
+```
+
+As long as the condition is valid, the loop will execute.
+
+#### Do-While Loops
+
+Finally we have the do-while loop. This is exactly similar to the while loop with one key difference, the loop body is guaranteed to execute at least once because the condition is evaluated at the end of the while loop.
+
+```cs
+do
+{
+  ...
+  i++;
+} while (i < 10);
+```
+
+
+#### Break and Continue
+
+- `Break` jumps out of the loop.
+- `Continue` jumps to the next iteration.
 
 
 
 ## Arrays and Lists
+At this point you know a little bit about arrays, in this section we will expand our knowledge about arrays and introduce you to multi-dimensional arrays. This is useful when working with structures such as `Matrix`. We are also going to introduce a `generic list` which are very useful in building real-world applications.
 
 ### Arrays
+In this section we will cover the following:
+- Quick review of arrays
+- Types of Arrays in C#
+- Array methods
+
+**Array** represent a fixed number of variables of a particular type. 
+
+#### Types of Arrays
+In C# there are two types of arrays `single dimension` and `multi dimension`.
+
+```cs
+var numbers = new int[5];
+
+// Object Initialization Syntax
+var numbers = new int[5] {1,2,3,4,5}; // If we know ahead of time the values we want to store.
+```
+
+#### Multi Dimension Arrays
+
+We have two types of multi-dim arrays in C#. `Rectangular` and `Jagged` arrays. In `Jagged` arrays the number of columns in each row can be different. A different way to look at `Jagged` arrays as array of arrays. In `.NET` CLR is optimized around single dimensional arrays. 
+
+
+<div class="image-container">
+<img src={MULTI_DIMENSION_ARRAYS} width={"50%"} alt="Multi Dimension Arrays" />
+</div>
+
+
+#### Syntax (Rectangular Array 2D)
+
+```cs
+var matrix = new int[3, 5]; // 3 rows and each row has 5 columns
+```
+
+If we know the values we would like to store into this array ahead of time, we can initialize this array using object initialization list as follows:
+
+```cs
+var matrix = new int[3,5]
+{
+  {1,2,3,4,5},
+  {6,7,8,9,10},
+  {11,12,13,14,15}
+};
+```
+
+To access an element in this array, we use index bracket:
+```cs
+var element = matrix[0,0];
+```
+
+#### Syntax (Rectangular Array 3D)
+
+```cs
+var colors = new int [3, 5, 4]; // 3x5x4
+```
+
+#### Syntax (Jagged)
+
+To create the following Jagged array:
+
+
+
+<div class="image-container">
+<img src={JAGGED} width={"30%"} alt="Jagged Arrays" />
+</div>
+
+```cs
+var array = new int[3][];
+
+array [0] = new int [4];
+array [1] = new int [5];
+array [2] = new int [3];
+
+// To access an element in that array
+array[0][0] = 1;
+```
+
+In `C#` all arrays map to the `Array` type that is defined in the `System` namespace of `.NET Framework`. The array type is a class, it has a bunch of `properties` and methods as shown in the image below.
+
+<div class="image-container">
+<img src={ARRAY_TYPE} width={"30%"} alt="Array Type" />
+</div>
+
+Example Code:
+
+```cs
+using System;
+
+public class Program
+{
+  public static void Main(string[] args)
+  {
+    var numbers = new[] {3, 7, 9, 2, 14, 6};
+
+    // Length Property
+    Console.WriteLine("Length : " + numbers.Length);
+
+    // IndexOf() method
+    var index = Array.IndexOf(numbers, 9);
+    Console.WriteLine("Index of 9: " + index);
+
+    // Clear() method
+    Array.Clear(numbers, 0, 2);
+
+    Console.WriteLine("Effect of Clear()"); // The first two elements are set to zero.s
+    foreach(var n in numbers) 
+    {
+      Console.WriteLine(n);
+    }
+
+    // Copy() method
+    var anotherArray = new int[3];
+    Array.Copy(numbers, anotherArray, 3); // Copy the first 3 elements from array to anotherArray
+
+    Console.WriteLine("Effect of Copy()"); // 0 0 9
+    foreach(var n in anotherArray) 
+      Console.WriteLine(n);
+
+    // Sort() method
+    Array.Sort(numbers);
+    Console.WriteLine("Effect of Sort()"); // 0 0 2 6 9 14
+    foreach(var n in numbers) 
+      Console.WriteLine(n);
+
+    // Reverse() method
+    Array.Reverse(numbers);
+    Console.WriteLine("Effect of Reverse()"); // 14 9 6 2 0 0
+    foreach(var n in numbers) 
+      Console.WriteLine(n);
+  }
+}
+```
 
 ### Lists
+`List` in C# is a dynamic array. Up until now we had arrays for working with fixed number of objects. In some cases you are not sure how many of those objects you are going to be working with and that where we use a `List`. 
+
+#### Arrays vs Lists
+- Array : `Fixed size`
+- List  : `Dynamic size`
+
+
+#### Creating a List
+List is a generic type `<type>` and you have to specify generic parameters, we will explain generics in part 3 of this C# Basics Tutorial. 
+
+```cs
+var numbers = new List<int>();
+```
+
+If we know ahead of time some of the objects we would like to store in the list. We can initialize the list using object initialization syntax.
+
+```cs
+var numbers = new List<int> () {1, 2, 3, 4};
+```
+
+#### Useful Methods
+
+- `Add()` 
+- `AddRange()`
+- `Remove()`
+- `RemoveAt()`
+- `IndexOf()`
+- `LastIndexOf()`
+- `Contains()`
+- `Count`
+
+```cs
+using System.Collections.Generic;
+
+public class Program
+{
+  public static void Main(string[] args)
+  {
+    var numbers =  new List<int> () { 1, 2, 3, 4 };
+    numbers.Add(1);
+    numbers.AddRange(new int[3] {5, 6, 7});
+
+    foreach(var number in numbers)
+      Console.WriteLine(number);
+    
+    Console.WriteLine();
+    Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
+    Console.WriteLine("Last Index of 1: " + numbers.LastIndexOf(1));
+
+    Console.WriteLine("Count: " + numbers.Count);
+
+    for(var i = 0; i < numbers.Count; i++)
+    {
+      if(numbers[i] == 1)
+        numbers.Remove(numbers[i]);
+    }
+
+    foreach(var number in numbers)
+      Console.WriteLine(number);
+
+    numbers.Clear();
+    Console.WriteLine("Count : " + numbers.Count);
+  } 
+}
+```
 
 
 
 ## Working with Dates
 
+In this section will learn how to work with `dates` and `times` in C#. We will introduce two new types in .NET, **DateTime** and **TimeSpan**.
+
 ### DateTime
 
+This is a structured defined in `System` namespace.
+
+```cs
+using System;
+
+namespace CSharpFundamentals
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      var dateTime = new DateTime(2023, 8, 31); // Constructor has many overloads
+      var now = DateTime.Now;
+      var today =  DateTime.Today;
+
+      Console.WriteLine("Hour : " + now.Hour);
+      Console.WriteLine("Minute : " + now.Minute);
+
+      // They are immutable, once created, can't change.
+
+      // To Modify them, use Add(..).. methods.
+
+      var tomorrow = now.AddDays(1); 
+      var yesterday = now.AddDays(-1);
+
+      // String Formatting 
+      Console.WriteLine(now.ToLongDateString());
+      Console.WriteLine(now.ToShortDateString());
+      Console.WriteLine(now.ToLongTimeString());
+      Console.WriteLine(now.ToShortTimeString());
+
+      Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm")); // You can pass format specifier to this method
+
+    }
+  }
+}
+```
+
+To learn more about `DateTime`, you can google search :
+- C# datetime format specifier 
+
 ### TimeSpan
+This type represent a length of time. There are different ways to create a `TimeSpan` but simplest one is to use the `new` operator.
+
+
+#### Creating TimeSpan Objects
+```cs
+using System;
+
+using CSFundamentals;
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    // 1 hr, 2 mins, 3 seconds
+    var timeSpan = new TimeSpan(1, 2, 3) ; // Has multiple overloads
+
+    var timeSpan1 = new TimeSpan(1,0,0);
+    var timeSpan2 = TimeSpan.FromHours(1);
+
+    // DateTime - DateTime = TimeSpan Object
+    var start = DateTime.Now;
+    var end = DateTime.Now.AddMinutes(2);
+    var duration = end - start; // TimeSpan 
+
+    Console.WriteLine("Duration : " + duration); // 00:02::00.0010000
+  }
+} 
+```
+
+#### Reading TimeSpan Object Properties
+```cs
+using System;
+
+using CSFundamentals;
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    // ...
+    var timeSpan = new TimeSpan(1,2,3); // Also immutable
+
+    // Properties
+    Console.WriteLine("Minutes : " + timeSpan.Minutes);
+    Console.WriteLine("Total Minutes : " + timeSpan.TotalMinutes); 
+
+    // Add 
+    Console.WriteLine("Add Example : " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+    Console.WriteLine("Subtract Example : " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+
+    // ToString
+    Console.WriteLine("ToString :" + timeSpan.ToString());
+
+    // Parse
+    Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03")); // Automatically applies ToString on the TimeSpan Object
+  }
+} 
+```
 
 
 ## Working with Text
@@ -720,18 +1284,96 @@ namespace CSharpFundamentals
 
 ### Procedural Programming
 
+**Procedural Programming** is a Programming paradigm based on procedure calls. By procedure, it means, `function`, `method`, `routine`, and `subroutine`.  A way to break large programs into small methods, or procedures, and organize functionality that way, to help manage the complexity of the program.
 
+**Object-Oriented Programming** A programming paradigm based on objects and message passing.
 
 ## Working with Files
+In this section will learn how to work with `files` and `directories` in C#. We will introduce few useful classes in .NET (File, FileInfo, Directory, DirectoryInfo and Path).
+
+
+
 
 ### Introduction to System.IO
+We will take a look on how to work with files and directories in C#. Under the namespace `System.IO` we have the following classes:
+- `File`, `FileInfo`
+- `Directory`, `DirectoryInfo`
+- `Path`
 
-### File and File Info
+There are many more classes in `.NET`, no one in the world, knows everything single class in `.NET`, you will discover classes based on your needs.
 
-### Directory and Directory Info
+#### File, FileInfo
+
+Provide methods for creating, copying, deleting, moving, and opening of files. They have similar interfaces, the only difference is:
+- **FileInfo**: provides **instance** methods
+- **File**: provides **static** methods.
+
+For small operation it is more suitable to use static methods, but these are security checks done by the operating system, which implies that if you have large set of operations it is better and more efficient to create a FileInfo class instance and access all of its methods.
+
+The following are possible methods:
+- `Create()`
+- `Copy()`
+- `Delete()`
+- `Exists()`
+- `GetAttributes()`
+- `Move()`
+- `ReadAllText()`
+
+#### Directory, DirectoryInfo
+- **Directory**: provides **static** methods.
+- **DirectoryInfo**: provides **instance** methods.
+
+The following are possible mehtods:
+- `CreateDirectory()`
+- `Delete()`
+- `Exists()`
+- `GetCurrentDirectory()`
+- `GetFiles()`
+- `Move()`
+- `GetLogicalDrives()`
+
+
+#### Path
+We also have the Path class. Contains methods that work with strings that contains path to file or directory information.
+
+- `GetDirectoryName()`
+- `GetFileName()`
+- `GetExtension()`
+- `GetTempPath()`
+
+
 
 ### Path
+This class makes it really easy to work with strings that represent a path. Recommended to look at MSDN documentations so that you don't have to re-invent the wheel. 
+```cs
+using System;
+using System.IO;
 
+using CSharpFundamentals;
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    var path = @"C:\Projects\CSharpFundamentals\HelloWorld\HelloWorld.sln";
+    
+    // Low-level processing
+    var dotIndex = path.IndexOf('.');
+    var extension = path.Substring(dotIndex);
+
+    // Using Path
+    Console.WriteLine("Extension: " + Path.GetExtension(path)); // .sln
+    Console.WriteLine("File Name: " + Path.GetFileName(path));  // HelloWorld.sln
+    Console.WriteLine("File Name without Extension : " + Path.GetFileNameWithoutExtension(path)); // HelloWorld
+    Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path));  // C:\Projects\CSharpFundamentals\HelloWorld
+  }
+}
+```
+
+:::tip
+
+ The same can be done with `File`, `FileInfo`, `Directory` and `DirectoryInfo` classes. Consult google search, or the MSDN website to have a look at their methods and how to use them.
+:::
 
 ## Debugging Applications
 
@@ -743,5 +1385,5 @@ namespace CSharpFundamentals
 
 ### Call Stack Window
 
-### Locals and Autos wINDOWS
+### Locals and Autos Windows
 
