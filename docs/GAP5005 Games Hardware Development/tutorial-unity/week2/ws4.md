@@ -5,7 +5,7 @@ import W2_PLAYER_TOGGLE     from './img/w2_player_toggle.jpg'
 import W2_CANNON_OBJ        from './img/w2_cannon_obj.jpg'
 import W2_CAMERA_PREVIEW    from './img/w2_camera_preview.jpg';
 import CANNON_SCENE         from './img/cannon_scene.png';
-
+import W2_CONSTRAINTS       from './img/w2_constraints.jpg';
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
 ## Getting Set Up
@@ -93,6 +93,14 @@ Modify your code so that your player is moving in the right direction.
 
 ### Step 4: Hierarchy Behaviour
 
+- **a)** Comment out your rotation code. Go the the Inspector Panel with your **Player** GameObject selected and under the **Constraints** section of your Rigidbody component, set the `X`,`Y` and `Z` rotations to be constrained; also freeze the `Z` position (which is into the screen in world space). The boxes you need to tick may differ dependent on your player's orientation, so have a play around with these values. Notice now how your player does not topple over and is <u>constrained</u> to set axis.
+
+<div class="image-container">
+<img src={W2_CONSTRAINTS} width={"30%"} alt="Constraints" />
+</div>
+
+- **b)** In your `Hierarchy Panel`, drag the `Main Camera` object onto your player so it becomes a child of your player, and give the game a play, just to see how we can get different results from our code based on our setup.
+
 ### Step 5: Avoiding Hardcoding
 
 
@@ -129,11 +137,9 @@ Make sure it's toggled off. Once that is done, we are ready to build an environm
 
     b. We now need to make a spawn point for our bullet, so we need to know where to spawn it in our game. Create an empty `GameObject` and name it to **spawnPoint**. Position your new object like so:
 
-  
-
-    <div class="image-container">
-      <img src={CANNON_SCENE} width={"30%"} alt="Cannon Scene" />
-    </div>
+<div class="image-container">
+<img src={CANNON_SCENE} width={"30%"} alt="Cannon Scene" />
+</div>
 
     In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards). We are now ready to code.
 
