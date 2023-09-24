@@ -50,13 +50,13 @@ Once that's done, open your **Jetpack** script.
 - **c)** Inside the if statement which is checking to see if the `A` key is held, add left force to your `m_rigidBody` variable. Run your game and see how your player is behaving; if it's not behaving as expected, refer to: `CRASH COURSE` below.
 
 
-### CRASH COURSE:
+### CRASH COURSE
 
 
 The `left / right` movement may differ for your **Player** GameObject as it is dependent on which way it is facing in the world. If your jetpack is not handling the way it should be (i.e. moving backwards instead of to the right), the go to your `Scene Panel` and select the **Player** GameObject.
 
 <div class="image-container">
-<img src={W2_CRASH_COURSE_CUBE} width={"50%"} alt="Cube" />
+<img src={W2_CRASH_COURSE_CUBE} width={"30%"} alt="Cube" />
 </div>
 
 - **Blue arrow is forward.**
@@ -78,4 +78,59 @@ Modify your code so that your player is moving in the right direction.
 
   Take note of how we are rotating the object here. Get a feel for what this does (remember "transform" without a reference before it refers to the object the script is attached to). This Rotate function is manipulating the object's orientation, which can be seen in the Inspector Panel.
 
-  
+- **b)** Add the ability for the player to also rotate to the left in your code.
+
+- **c)** In the above image take note for the -1 value. This means we want to rotate the object `1 unit` per frame (providing our method is called in then Update function), which, if we are running at 60 FPS, might be a lot of movement. In order to make aspects of your game framerate <u>independent</u>, we can multiply the value by **Time.deltaTime**. Go ahead and do this. Your rotation movement will then move `1 unit` per second, instead of each frame. You will use this **EXTENSIVELY** in your games; get used to using it.
+
+    You may wish to tweak the `-1` and `1` values to increase the speed.
+
+
+
+### Step 4: Hierarchy Behaviour
+
+
+
+## SHOOTING FUNCTIONALITY:
+
+### Getting Set Up
+
+
+### Step 1: Input and Bullet Spawning
+
+### Step 2: Bullet Force
+
+### Step 3: Tidying the Scene
+
+- **a)** if we were to continue firing the cannon for a long period of time our game would crash, because it would run out of memory (too many objects). A handy little feature which unity has is the `Destroy()` function, we can use to help clear our scene up. Inside your `BulletForce` script, create a new function called `DestroyBullet()` and call it in the `Start()` function.
+
+- **b)** At the top of your script create a new variable of type `float` with the name `destroyDelay`.
+
+- **c)** Inside your newly created `DestroyBullet()` function add the following:
+
+    ```cs
+      Destroy(gameObject, destroyDelay);
+    ```
+
+- **d)** Select your bullet prefab from the `Project Panel` and modify the `destroyDelay` variable to be how long in seconds you want to wait before the bullet is removed from our scene. Give this a test.
+
+
+
+### Additional Tasks
+
+- **a)** Ensure all public variables are encapsulated within their respective class by using private modifiers and `[SerializeField]`.
+
+- **b)** Experiment with the techniques we have learned over the past 2 weeks to try and achieve the following:
+
+  - a. The camera should take on a top-down view point which follows the GameObject around (use multiple GameObjects to create a tank).
+
+  - b. Your tank should be able to move backwards and forwards when the up and down arrows are pressed respectively; this should be achieved with physics.
+
+  - c. Your tank should be able to rotate `left/right` with `A/D/LeftArrow/RightArrow`.
+
+  - d. Your tank should fire projectiles when the left mouse button is pressed from a cannon which is mounted on the front.
+
+  - e. Your tank should have a reload system which requires the user to reload the cannon after 3 shots have been fired.
+
+  - f. Take a look at Unity's UI system. Have a go at displaying how many bullets the tank has fired in the top-left corner.
+
+
