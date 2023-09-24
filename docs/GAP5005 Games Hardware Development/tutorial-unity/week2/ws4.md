@@ -6,6 +6,8 @@ import W2_CANNON_OBJ        from './img/w2_cannon_obj.jpg'
 import W2_CAMERA_PREVIEW    from './img/w2_camera_preview.jpg';
 import CANNON_SCENE         from './img/cannon_scene.png';
 import W2_CONSTRAINTS       from './img/w2_constraints.jpg';
+import W2_MAX_ONPLAY        from './img/w2_max_onplay.jpg';
+
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
 ## Getting Set Up
@@ -103,6 +105,29 @@ Modify your code so that your player is moving in the right direction.
 
 ### Step 5: Avoiding Hardcoding
 
+- **a)** 
+
+- **b)**
+
+- **c)**
+
+- **d)**
+
+- **e)**
+
+- **f)**
+
+#### Top Tip:
+
+Changing values and running your game can be cumbersome, especially when fine-tunning a varaible like thrust and rotation speed. To speed up the process, select your Game Panel and make sure **Maximize On Play** is disabled:
+
+
+<div class="image-container">
+<img src={W2_MAX_ONPLAY} width={"40%"} alt="Max On Play" />
+</div>
+
+
+Run your game and you will notice that if your **Player** GameObject is still selected in the Hierarchy Panel you will be able to see the Inspector Panel and the values - these values update in real time so go ahead and play with them like this. Remember though, once you exit the game, your values will be forgotten, so after you have made changes, right-click cog found on the script component in the Inspect Panel, click **Copy Component**, and paste them in the same manner with **Paste Component Values** once the game has been stopped. This makes iteration MUCH faster.
 
 
 
