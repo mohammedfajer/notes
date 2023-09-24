@@ -1,5 +1,6 @@
 
 import W2_CRASH_COURSE_CUBE from './img/w2_crash_course_cube.jpg'
+import W2_SHOOTING_SCRIPT from './img/w2_shooting_script.jpg'
 
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
@@ -97,7 +98,46 @@ Modify your code so that your player is moving in the right direction.
 
 ### Step 1: Input and Bullet Spawning
 
+- **a)** Create a new script called **Shooting** in your `Scripts` folder. Attach it as a component to the base of your cannon (the sphere `GameObject`).
+
+- **b)** Open up your new script and create a variable with the name `bullet` of type `GameObject`; make sure it is private and use `[SerializeField]`.
+
+- **c)** Create another variable of type `GameObject` and give it the name **spawnPoint**. Use the same method as above.
+
+- **d)** Go back to your game and select the sphere GameObject; you should see the following in the Inspector Panel:
+
+
+<div class="image-container">
+<img src={W2_SHOOTING_SCRIPT} width={"40%"} alt="Shooting Script" />
+</div>
+
+
+
+- **e)** Drag your **bullet** prefab into the `Bullet` slot from your Project Panel. Once that's done, drag your **spawnPoint** GameObject from the Hierarchy Panel onto the `SpawnPoint` slot.
+
+- **f)** Open up your **Shooting** script and create a new function called **IsShooting()**; make sure the function return a bool.
+
+- **g)** Inside your **ShootingInput** function add some logic which checks to see if the left mouse button is pressed once; if it is, return true; if it's not, return false. Remember, we only want to check for one press, not continuous.
+
+- **h)** In a suitable place, check to see if **IsShooting** is true, and if it is, instantiate your bullet variable at the position and rotation of your **spawnPoint** variable. Run your game and shoot the cannon - if everything is correct your bullet should spawn at the **spawnPoint** GameObject and fall gracefully to the ground; make the cube prefab smaller if you need to.
+
+
+
 ### Step 2: Bullet Force
+  
+- **a)** Create a new script with a name `BulletForce`. Select your `bullet` prefab from the Project Panel and add your new script as a component.
+
+- **b)** Open up your script, and declare a variable of type `RigidBody`, and give it the name `m_rigidBody`.
+
+- **c)** Initialize the `m_rigidBody` variable in the Start function.
+
+- **d)** Create another variable of type float with the name **force**.
+
+- **e)** Create a new function called **ApplyForce()** and call it somewhere suitable (`Start()` or `Update()`) - remember, we want to add force to it once, not continuously.
+
+- **f)**  Using today's presentation as guidance, add force to your bullet inside your newly created function, and multiply the direction by your **force** variable.. Once you think you're done, go to your Project Panel and select the **bullet** prefab to modify the **force** variable in the Inspector Panel - make sre it's not 0 or it will not move.
+
+- **g)** Run your game and if you've done everything correctly you should be able to fire bullets / cannonballs by pressing the left mouse button. You may or may not notice that there's some drag on your bullets at the end of their flightpath though, which looks unnatural; to rectify this, select your **bullet** prefab in the **Prefabs** folder and set the drag and angular drag to 0 on the **Rigidbody** component.
 
 ### Step 3: Tidying the Scene
 
