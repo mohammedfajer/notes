@@ -166,7 +166,8 @@ Make sure it's toggled off. Once that is done, we are ready to build an environm
 <img src={CANNON_SCENE} width={"30%"} alt="Cannon Scene" />
 </div>
 
-    In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards). We are now ready to code.
+  
+In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards). We are now ready to code.
 
 ### Step 1: Input and Bullet Spawning
 
