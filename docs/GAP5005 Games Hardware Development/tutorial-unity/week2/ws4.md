@@ -1,6 +1,10 @@
 
 import W2_CRASH_COURSE_CUBE from './img/w2_crash_course_cube.jpg'
-import W2_SHOOTING_SCRIPT from './img/w2_shooting_script.jpg'
+import W2_SHOOTING_SCRIPT   from './img/w2_shooting_script.jpg'
+import W2_PLAYER_TOGGLE     from './img/w2_player_toggle.jpg'
+import W2_CANNON_OBJ        from './img/w2_cannon_obj.jpg'
+import W2_CAMERA_PREVIEW    from './img/w2_camera_preview.jpg';
+import CANNON_SCENE         from './img/cannon_scene.png';
 
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
@@ -89,12 +93,49 @@ Modify your code so that your player is moving in the right direction.
 
 ### Step 4: Hierarchy Behaviour
 
+### Step 5: Avoiding Hardcoding
+
+
 
 
 ## SHOOTING FUNCTIONALITY:
 
 ### Getting Set Up
 
+We are going to use the same environment for our shooting mechanic, so before we go ahead and put objects in place, we're going to disable our **Player** GameObject which we sued in the previous task; to do this, select the object you want to disable in the Hierarchy Panel, look over to the Inspector Panel and use this check-box:
+
+<div class="image-container">
+<img src={W2_PLAYER_TOGGLE} width={"30%"} alt="Player Toggle On/Off" />
+</div>
+
+
+Make sure it's toggled off. Once that is done, we are ready to build an environment for our shooting mechanic.
+
+1. Create a cylinder and a sphere `GameObject` and position them like so (use the navigation tools at the top to achieve this result):
+
+<div class="image-container">
+<img src={W2_CANNON_OBJ} width={"30%"} alt="Cannon GameObject" />
+</div>
+
+2. Make sure the object is positioned to the left-side of your camera's viewport - to do this, select the Main Camera and take a look at the preview window that appears in the bottom-right of the Scene Panel:
+
+<div class="image-container">
+<img src={W2_CAMERA_PREVIEW} width={"30%"} alt="Camera Preview" />
+</div>
+
+3. Before we dive into the code, there is a couple of things we need to do; we need to create a bullet prefab, and also a spawn point for our bullet tp spawn at; we'll start with the former.
+
+    a. Create a new folder in your Project Panel called **Prefabs**. Create a new sphere `GameObject` in your scene and add a `Rigidbody` component to it. Store the newly created cube as a prefab in your new **Prefabs** folder - name the prefab: **Bullet**
+
+    b. We now need to make a spawn point for our bullet, so we need to know where to spawn it in our game. Create an empty `GameObject` and name it to **spawnPoint**. Position your new object like so:
+
+  
+
+    <div class="image-container">
+      <img src={CANNON_SCENE} width={"30%"} alt="Cannon Scene" />
+    </div>
+
+    In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards). We are now ready to code.
 
 ### Step 1: Input and Bullet Spawning
 
