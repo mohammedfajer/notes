@@ -54,5 +54,5 @@ In case it's unclear, when I refer to an instance, I mean an object in the scene
 10. On each instance in the hierarchy, set `KeyColor`. Some of these can be the same if you like, but make sure at least some are different. Run the game and try pressing the keys you set up. All being well you'll have a grid of `pixels` that you can change the colour of!
 
 <div class="image-container">
-<img src={W2_PIXEL_GRID} width={"80%"} alt="Pixel Grid" />
+<img src={W2_PIXEL_GRID} width={"50%"} alt="Pixel Grid" />
 </div>
