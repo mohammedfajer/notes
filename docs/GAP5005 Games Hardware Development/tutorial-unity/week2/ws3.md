@@ -14,11 +14,11 @@ import W2_PIXEL_GRID from './img/w2_pixel_grid.png'
 
 :::tip
 
-  Recap: The hierarchy is where objects in a **Scene** live. A scene is ana isolated pocket of the game, like a level. They do not interact with each other. They do not interact with each other. When you store an object as a prefab, you move it into a global context. You can add it to as many scenes as you like. What's more, if you modify the prefab, all copies in all sens will be modified too. This is a one-way system. If you change a prefab instance in the scene, it will not change the prefab or any other instances.
+  Recap: The hierarchy is where objects in a **Scene** live. A scene is an isolated pocket of the game, like a level. They do not interact with each other. When you store an object as a prefab, you move it into a global context. You can add it to as many scenes as you like. What's more, if you modify the prefab, all copies in all scenes will be modified too. This is a one-way system. If you change a prefab instance in the scene, it will not change the prefab or any other instances.
 
 :::
 
-3. Create a mew script and call it `PixelComponent`.
+3. Create a new script and call it `PixelComponent`.
 
 4. Double click the prefab in the project view. It should open the prefab directly. Add the PixelComponent to the game object.
 
