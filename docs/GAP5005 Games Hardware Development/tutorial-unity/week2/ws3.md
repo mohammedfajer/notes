@@ -22,7 +22,7 @@ import W2_PIXEL_GRID from './img/w2_pixel_grid.png'
 
 4. Double click the prefab in the project view. It should open the prefab directly. Add the PixelComponent to the game object.
 
-5. We are going to make the game object change when we press a button. However we don't want this to occur on EVERY Pixel using the same input, so we're going to pass into the component which `Key` we want to use. Create a variable of type `KeyCode` and make sure it is visible in the editor. If it is not visible, double check how we make things visible to be the editor in last week's presentation.
+5. We are going to make the game object change when we press a button. However we don't want this to occur on EVERY Pixel using the same input, so we're going to pass into the component which `Key` we want to use. Create a variable of type `KeyCode` and make sure it is visible in the editor. If it is not visible, double check how we make things visible to be in the editor in last week's presentation.
 
 6. We're going to add an array of `Color` elements to it (spelled like that). Make it visible in the editor. Now add as many colours as you like to the array in the editor.
 
@@ -48,7 +48,7 @@ Defining Arrays in C# is much the same as in C++ with one difference. Where in C
 9. Time to test it out! Close the prefab screen (The button is located at the top of the hierarchy panel) and check the Pixel instance you added at the start. All being well it should already have the component added and all the colours set up from the prefab. Drag the prefab in a few more times and create a grid. I suggest 3x3 for testing to start with.
 
 :::info
-In case it's unclear, when I refer to an instance, I mean an object in the scene. Because the orginal version of the object is the Prefab, every copy we create is called an "Instance".
+In case it's unclear, when I refer to an instance, I mean an object in the scene. Because the original version of the object is the Prefab, every copy we create is called an "Instance".
 :::
 
 10. On each instance in the hierarchy, set `KeyColor`. Some of these can be the same if you like, but make sure at least some are different. Run the game and try pressing the keys you set up. All being well you'll have a grid of `pixels` that you can change the colour of!
