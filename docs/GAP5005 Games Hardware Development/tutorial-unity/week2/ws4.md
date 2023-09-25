@@ -7,6 +7,7 @@ import W2_CAMERA_PREVIEW    from './img/w2_camera_preview.jpg';
 import CANNON_SCENE         from './img/cannon_scene.png';
 import W2_CONSTRAINTS       from './img/w2_constraints.jpg';
 import W2_MAX_ONPLAY        from './img/w2_max_onplay.jpg';
+import W2_PLAYER_BEHAVIOUR  from './img/w2_player_behaviour.jpg';
 
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
@@ -105,17 +106,37 @@ Modify your code so that your player is moving in the right direction.
 
 ### Step 5: Avoiding Hardcoding
 
-- **a)** 
+Hardcoding can be defined as using absolute values in places where variables could be used. Hardcoded values are difficult to modify by designers as they are embedded into the code. So, for example, you may have a player movement speed variable set to 10, and designers have access to this value to tweak as they please. However, if you never make this variable and simply use the **hardcoded** value of 10, the only way a designer could modify the value is by modifying your function. This is not ideal!
 
-- **b)**
+- **a)** Uncomment your rotation code so that it's working again and drag your camera out of your **Player** GameObject in the Hierarchy Panel so that it is no longer a child.
 
-- **c)**
+- **b)** Create two new private float variables at the top of your **Jetpack** script with the name **rotationSpeed** and one with the name **thrust**.
 
-- **d)**
+    **IMPORTANT 1**: The reason why we make variables private by default is to encapsulate our code. We do not want any other class to manipulate what's in this class. Whilst this might not seem like a problem at the moment, it can quickly build up and become problematic - Always declare private unless you specifically need a public function / variable.
 
-- **e)**
+    **IMPORTANT 2**: Your private variables will not appear in the Inspector Panel, which sometimes isn't what we want to happen. In order to keep your variables private and have them appear in the Inspector Panel, we can place: `[SerializeField]` above the variable declaration. Please do this and get used to using it.
 
-- **f)**
+- **c)** In your script, navigate to the code which is rotating the player; it should be something like the following:
+
+```cs
+  transform.Rotate(0, 0, 1 * Time.deltaTime);
+```
+
+    Change the code so that it uses your `rotationSpeed` variable instead of a hard coded value.
+
+    Do the same for the opposite direction, using the same `rotationSpeed` variable.
+
+- **d)** Go back to your game and select your **Player** GameObject in the Hierarchy Panel and take a look at the inspector panel; you will notice the following:
+
+<div class="">
+<img src={W2_PLAYER_BEHAVIOUR} width={"30%"} alt="Player Behaviour" />
+</div>
+
+    We can now control the **rotationSpeed** variable via the Inspector Panel to make iteration/getting the best value easier. Change the value and run the game to see how the rotation behaves.
+
+- **e)** Open up your script again and go to the code which is applying force to your `Rigidbody` when the space bar is held; you will notice we are multiplying the direction by a hard value (perhaps 10, for example). Instead of multiplying it by a number, multiply it be your **thrust** variable. Go to the Inspector Panel and manipulate the value to see how it behaves.
+
+- **f)** Add another variable of type float with the name **directionSpeed** and make it so that you jetpack uses this value when moving left and right. This will give you extra movement if you feel your system requires it.
 
 #### Top Tip:
 
