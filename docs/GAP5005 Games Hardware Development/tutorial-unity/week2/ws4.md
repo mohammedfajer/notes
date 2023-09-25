@@ -26,7 +26,7 @@ import W2_PLAYER_BEHAVIOUR  from './img/w2_player_behaviour.jpg';
 
 7. Our **Player** GameObject is going to be controlled by physics, so we also need to add a **Rigidbody** component to it; go ahead and do this.
 
-8. Before we begin coding, create a new folder in your Project Panel called **Material**. Right-click inside that folder and navigate:
+8. Before we begin coding, create a new folder in your Project Panel called **Materials**. Right-click inside that folder and navigate:
 
     `Create > Material`
 
@@ -51,7 +51,7 @@ Once that's done, open your **Jetpack** script.
 
 ### Step 2: Applying the Physics
 
-- **a)** Inside the if statement which is checking to see if **IsJetpackButtonDown** returns true, add upwards force to your `m_rigidBody` variable. Refer to today's presentation near the end if you are struggling. Once that is down, run your game and hold down the spacebar - if everything has been implemented correctly, your player should start to move upwards, and when you let go, it should fall. Please make sure you added the script to your cube if it's not working.
+- **a)** Inside the if statement which is checking to see if **IsJetpackButtonDown** returns true, add upwards force to your `m_rigidBody` variable. Refer to today's presentation near the end if you are struggling. Once that is done, run your game and hold down the spacebar - if everything has been implemented correctly, your player should start to move upwards, and when you let go, it should fall. Please make sure you added the script to your cube if it's not working.
 
 - **b)** Inside the if statement which is checking to see if the `D` key is held, add right force to your `m_rigidBody` variable. Run your game and see how your player is behaving; if it's not behaving as expected, refer to: `CRASH COURSE` below.
 
