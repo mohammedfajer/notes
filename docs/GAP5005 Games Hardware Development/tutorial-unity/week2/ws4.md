@@ -122,9 +122,9 @@ Hardcoding can be defined as using absolute values in places where variables cou
   transform.Rotate(0, 0, 1 * Time.deltaTime);
 ```
 
-    Change the code so that it uses your `rotationSpeed` variable instead of a hard coded value.
+Change the code so that it uses your `rotationSpeed` variable instead of a hard coded value.
 
-    Do the same for the opposite direction, using the same `rotationSpeed` variable.
+Do the same for the opposite direction, using the same `rotationSpeed` variable.
 
 - **d)** Go back to your game and select your **Player** GameObject in the Hierarchy Panel and take a look at the inspector panel; you will notice the following:
 
@@ -132,7 +132,7 @@ Hardcoding can be defined as using absolute values in places where variables cou
 <img src={W2_PLAYER_BEHAVIOUR} width={"30%"} alt="Player Behaviour" />
 </div>
 
-    We can now control the **rotationSpeed** variable via the Inspector Panel to make iteration/getting the best value easier. Change the value and run the game to see how the rotation behaves.
+We can now control the **rotationSpeed** variable via the Inspector Panel to make iteration/getting the best value easier. Change the value and run the game to see how the rotation behaves.
 
 - **e)** Open up your script again and go to the code which is applying force to your `Rigidbody` when the space bar is held; you will notice we are multiplying the direction by a hard value (perhaps 10, for example). Instead of multiplying it by a number, multiply it be your **thrust** variable. Go to the Inspector Panel and manipulate the value to see how it behaves.
 
