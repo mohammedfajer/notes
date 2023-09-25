@@ -88,7 +88,7 @@ Modify your code so that your player is moving in the right direction.
 
 - **b)** Add the ability for the player to also rotate to the left in your code.
 
-- **c)** In the above image take note for the -1 value. This means we want to rotate the object `1 unit` per frame (providing our method is called in then Update function), which, if we are running at 60 FPS, might be a lot of movement. In order to make aspects of your game framerate <u>independent</u>, we can multiply the value by **Time.deltaTime**. Go ahead and do this. Your rotation movement will then move `1 unit` per second, instead of each frame. You will use this **EXTENSIVELY** in your games; get used to using it.
+- **c)** In the above image take note for the -1 value. This means we want to rotate the object `1 unit` per frame (providing our method is called in the Update function), which, if we are running at 60 FPS, might be a lot of movement. In order to make aspects of your game framerate <u>independent</u>, we can multiply the value by **Time.deltaTime**. Go ahead and do this. Your rotation movement will then move `1 unit` per second, instead of each frame. You will use this **EXTENSIVELY** in your games; get used to using it.
 
     You may wish to tweak the `-1` and `1` values to increase the speed.
 
