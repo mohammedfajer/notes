@@ -1,13 +1,14 @@
 
 import W2_CRASH_COURSE_CUBE from './img/w2_crash_course_cube.jpg'
 import W2_SHOOTING_SCRIPT   from './img/w2_shooting_script.jpg'
-import W2_PLAYER_TOGGLE     from './img/w2_player_toggle.jpg'
+import W2_PLAYER_TOGGLE     from './img/w2_disable_player.png'
 import W2_CANNON_OBJ        from './img/w2_cannon_obj.jpg'
 import W2_CAMERA_PREVIEW    from './img/w2_camera_preview.jpg';
 import CANNON_SCENE         from './img/cannon_scene.png';
 import W2_CONSTRAINTS       from './img/w2_constraints.jpg';
-import W2_MAX_ONPLAY        from './img/w2_max_onplay.jpg';
+import W2_PLAY_VIEW         from './img/w2_play_view.png';
 import W2_PLAYER_BEHAVIOUR  from './img/w2_player_behaviour.jpg';
+import W2_CANNON_FIRING     from './img/w2_cannon_firing.png';
 
 # Task Sheet 4 - Creating Gameplay Mechanics 
 
@@ -144,7 +145,7 @@ Changing values and running your game can be cumbersome, especially when fine-tu
 
 
 <div class="image-container">
-<img src={W2_MAX_ONPLAY} width={"40%"} alt="Max On Play" />
+<img src={W2_PLAY_VIEW} width={"40%"} alt="Max On Play" />
 </div>
 
 
@@ -156,11 +157,12 @@ Run your game and you will notice that if your **Player** GameObject is still se
 
 ### Getting Set Up
 
-We are going to use the same environment for our shooting mechanic, so before we go ahead and put objects in place, we're going to disable our **Player** GameObject which we sued in the previous task; to do this, select the object you want to disable in the Hierarchy Panel, look over to the Inspector Panel and use this check-box:
+We are going to use the same environment for our shooting mechanic, so before we go ahead and put objects in place, we're going to disable our **Player** GameObject which we used in the previous task; to do this, select the object you want to disable in the Hierarchy Panel, look over to the Inspector Panel and use this check-box:
 
 <div class="image-container">
 <img src={W2_PLAYER_TOGGLE} width={"30%"} alt="Player Toggle On/Off" />
 </div>
+
 
 
 Make sure it's toggled off. Once that is done, we are ready to build an environment for our shooting mechanic.
@@ -177,9 +179,9 @@ Make sure it's toggled off. Once that is done, we are ready to build an environm
 <img src={W2_CAMERA_PREVIEW} width={"30%"} alt="Camera Preview" />
 </div>
 
-3. Before we dive into the code, there is a couple of things we need to do; we need to create a bullet prefab, and also a spawn point for our bullet tp spawn at; we'll start with the former.
+3. Before we dive into the code, there is a couple of things we need to do; we need to create a bullet prefab, and also a spawn point for our bullet to spawn at; we'll start with the former.
 
-    a. Create a new folder in your Project Panel called **Prefabs**. Create a new sphere `GameObject` in your scene and add a `Rigidbody` component to it. Store the newly created cube as a prefab in your new **Prefabs** folder - name the prefab: **Bullet**
+    a. Create a new folder in your Project Panel called **Prefabs**. Create a new sphere `GameObject` in your scene and add a `Rigidbody` component to it. Store the newly created sphere as a prefab in your new **Prefabs** folder - name the prefab: **Bullet**
 
     b. We now need to make a spawn point for our bullet, so we need to know where to spawn it in our game. Create an empty `GameObject` and name it to **spawnPoint**. Position your new object like so:
 
@@ -188,7 +190,7 @@ Make sure it's toggled off. Once that is done, we are ready to build an environm
 </div>
 
   
-In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards). We are now ready to code.
+In short, position it exactly where you want the bullet to spawn from, and make sure the blue arrow is facing in the direction you expect the bullet to travel (remember, blue arrow = forwards), make sure you select Handle Rotation to **Local** to view. We are now ready to code.
 
 ### Step 1: Input and Bullet Spawning
 
@@ -211,9 +213,9 @@ In short, position it exactly where you want the bullet to spawn from, and make 
 
 - **f)** Open up your **Shooting** script and create a new function called **IsShooting()**; make sure the function return a bool.
 
-- **g)** Inside your **ShootingInput** function add some logic which checks to see if the left mouse button is pressed once; if it is, return true; if it's not, return false. Remember, we only want to check for one press, not continuous.
+- **g)** Inside your **IsShooting()** function add some logic which checks to see if the left mouse button is pressed once; if it is, return true; if it's not, return false. Remember, we only want to check for one press, not continuous.
 
-- **h)** In a suitable place, check to see if **IsShooting** is true, and if it is, instantiate your bullet variable at the position and rotation of your **spawnPoint** variable. Run your game and shoot the cannon - if everything is correct your bullet should spawn at the **spawnPoint** GameObject and fall gracefully to the ground; make the cube prefab smaller if you need to.
+- **h)** In a suitable place, check to see if **IsShooting()** is true, and if it is, instantiate your bullet variable at the position and rotation of your **spawnPoint** variable. Run your game and shoot the cannon - if everything is correct your bullet should spawn at the **spawnPoint** GameObject and fall gracefully to the ground; make the bullet sphere prefab smaller if you need to.
 
 
 
@@ -229,9 +231,14 @@ In short, position it exactly where you want the bullet to spawn from, and make 
 
 - **e)** Create a new function called **ApplyForce()** and call it somewhere suitable (`Start()` or `Update()`) - remember, we want to add force to it once, not continuously.
 
-- **f)**  Using today's presentation as guidance, add force to your bullet inside your newly created function, and multiply the direction by your **force** variable.. Once you think you're done, go to your Project Panel and select the **bullet** prefab to modify the **force** variable in the Inspector Panel - make sre it's not 0 or it will not move.
+- **f)**  Using today's presentation as guidance, add force to your bullet inside your newly created function, and multiply the direction by your **force** variable.. Once you think you're done, go to your Project Panel and select the **bullet** prefab to modify the **force** variable in the Inspector Panel - make sure it's not 0 or it will not move.
 
 - **g)** Run your game and if you've done everything correctly you should be able to fire bullets / cannonballs by pressing the left mouse button. You may or may not notice that there's some drag on your bullets at the end of their flightpath though, which looks unnatural; to rectify this, select your **bullet** prefab in the **Prefabs** folder and set the drag and angular drag to 0 on the **Rigidbody** component.
+
+<div class="image-container">
+<img src={W2_CANNON_FIRING} width={"80%"} alt="Cannon Scene" />
+</div>
+
 
 ### Step 3: Tidying the Scene
 
