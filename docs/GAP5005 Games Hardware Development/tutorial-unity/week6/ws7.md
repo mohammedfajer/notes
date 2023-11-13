@@ -289,7 +289,7 @@ The previous section was much harder than this section, as we had to manually **
 
   In a few weeks’ time, we’ll look at saving more complex data types, such as lists, as well as creating binary files to store our data. Remember, data persistence is worth **20%** of the assignment!
 
-  Remember to update your data paths to **persistantDataPath**!
+  Remember to update your data paths to **persistentDataPath**!
 
 
 
