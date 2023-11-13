@@ -12,7 +12,7 @@ This worksheet will help you understand the following
 
 ## Step 1 Using Unity's Player Preferences
 
-As mentioned in today's presentation, Unity comes with a build in `save/load` system called **Player Preferences (PlayerPrefs)**. The data which is stored using this system is saved to the registry on Windows, which isn't always ideal, but it is great for storing singular values such as integers, bools, and floats. In this task sheet, I will guide you through three types of data persistence: PlayerPrefs, loading/writing to custom files and JSON.
+As mentioned in today's presentation, Unity comes with a built in **`save/load`** system called **Player Preferences (PlayerPrefs)**. The data which is stored using this system is saved to the registry on Windows, which isn't always ideal, but it is great for storing singular values such as integers, bools, and floats. In this task sheet, I will guide you through three types of data persistence: PlayerPrefs, loading/writing to custom files and JSON.
 
 
 1. Download the project from `Week 06` on the Moodle page and open it up. If it asks you to upgrade, please do so. I have created a very simple game for us to test our data persistence with today; we'll be saving/loading: health, level, and position.
