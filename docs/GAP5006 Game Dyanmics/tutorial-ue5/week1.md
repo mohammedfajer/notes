@@ -293,7 +293,7 @@ If successful, you should get a message in the Output panel, similar to:
 
 :::note
 
-Note: the camera and object's coordinate position may be in a different position, and may not be visible, depending on where you dragged the icon.
+**Note**: the camera and object's coordinate position may be in a different position, and may not be visible, depending on where you dragged the icon.
 
 :::
 
