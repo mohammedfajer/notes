@@ -234,7 +234,7 @@ A `USceneComponent` contains a transform, where the position, rotation, and scal
 
 We now want to create a <u>**root component**</u> that we can attach a camera to. Do the following:
 
-3. Firstly, we want to specify that this object will receive input during game play. Within the **GD_Pawn.cpp** source file, in the **constructor** add the following code:
+3. Firstly, we want to specify that this object will receive input during gameplay. Within the **GD_Pawn.cpp** source file, in the **constructor** add the following code:
 
 ```cpp title="C:\temp\UE5\GDyn1\Source\GDyn1\GD_Pawn.cpp"
 // Sets default values
@@ -247,7 +247,7 @@ AGD_Pawn::AGD_Pawn()
 }
 ```
 
-4. Now let's create the components we declared. Within the **GD_Pawn** constructor again dd the code:
+4. Now let's create the components we declared. Within the **GD_Pawn** constructor again add the code:
 
 ```cpp title="C:\temp\UE5\GDyn1\Source\GDyn1\GD_Pawn.cpp"
 
