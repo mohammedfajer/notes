@@ -39,7 +39,6 @@ When creating 3D games, you will frequently need to include **physics** to provi
 
 
 ## Create C++ Project
-to be continued
 
 ### 1. Open UE5 version 5.2.1
 
