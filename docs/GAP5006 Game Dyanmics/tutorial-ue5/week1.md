@@ -130,7 +130,7 @@ Now your project should save to the **GDMap** and also on reloading, startup on 
 
 ## Adding first C++ script
 
-1. Within the **Content Browser**, click on **C++ Classes** and select the **GDyn1** folder. Right-click within the panel and **select New C++ Class**. An **Add c++ Class** form should be displayed. We want to add an object that can respond to inputs.
+1. Within the Editor click on **Tools**, click on **New C++ Class...**. An **Add c++ Class** form should be displayed. We want to add an object that can respond to inputs.
 
 <div class="image-container">
 <img src={CreateCPP} width={"80%"} alt="React Logo" />
@@ -138,7 +138,7 @@ Now your project should save to the **GDMap** and also on reloading, startup on 
 
 2. Select **Pawn** and click on the **Next** button. Within the **Name** text box, type in **GD_Pawn** and then click on the **Create Class** button.
 
-3. A class should be added to the Project, which should be compiled within the UE5 editor, as it is added. The default code for the **GD_Pawn** class should be open in VS. Head there now. You may be prompted to **Reload All**, click on it, if requested.
+3. A class should be added to the Project under **C++ Classes/GDyn1** folder, which should be compiled within the UE5 editor, as it is added. The default code for the **GD_Pawn** class should be open in VS. Head there now. You may be prompted to **Reload All**, click on it, if requested.
 
 4. Before continuing, it may be worth reviewing and changing the settings for VS, as suggested [<u>Here</u>](https://docs.unrealengine.com/5.2/en-US/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/)
 
