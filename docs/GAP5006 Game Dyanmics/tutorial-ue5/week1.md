@@ -232,7 +232,7 @@ UCameraComponent  *Camera;
 
 A `USceneComponent` contains a transform, where the position, rotation, and scale of a component are stored. In addition, a camera component has been added too.
 
-We now want to create a root component that we can attach a camera to. Do the following:
+We now want to create a <u>**root component**</u> that we can attach a camera to. Do the following:
 
 3. Firstly, we want to specify that this object will receive input during game play. Within the **GD_Pawn.cpp** source file, in the **constructor** add the following code:
 
