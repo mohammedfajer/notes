@@ -34,7 +34,7 @@ Task Sheet 1 - Getting Started with UE5
 The Unreal Engine is a powerful software tool, allowing for the creation of many types of games, from small **indie** tiles to **AAA (triple A)** masterpieces. We'll be using UE5.
 
 ### Using Unreal Engine 5 and C++
-When creating 3D games, you will frequently need to include **physics** to provide realistic object movement and other physical simulation. **Physics Engines** are often used within the games industry to provide realism within game environments. The Unreal Engine 5, (UE5)  is used widely withing the games industry, and has the physics engine **PhysX** built into it. The worksheet introduces game development using UE5 with C++.
+When creating 3D games, you will frequently need to include **physics** to provide realistic object movement and other physical simulation. **Physics Engines** are often used within the games industry to provide realism within game environments. The Unreal Engine 5, (UE5)  is used widely within the games industry, and has the physics engine **PhysX** built into it. The worksheet introduces game development using UE5 with C++.
 
 
 
