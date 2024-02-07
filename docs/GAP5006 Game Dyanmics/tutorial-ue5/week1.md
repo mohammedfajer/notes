@@ -349,7 +349,7 @@ We now want to view the GD_Pawn object. We are going to add a visible static mes
 If you look at the viewport now, the GD_Pawn object is now visible with the selected static mesh and material.
 
 
-#### Exercise
+### Exercise
 The static mesh is quite large. In UE5, click on the **visibleComponent** in the **GD_Pawn** object and **Scale** it to **0.5** in all directions. Reset the Z location accordingly.
 
 
