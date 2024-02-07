@@ -103,7 +103,7 @@ Do the following:
 
 ![UE5 Project Setting](./img/project_settings.png)
 
-2. It is worth putting your **name** within the **Copyright Notice** text box, in the Legal section, as it is added at the top of C++ files added during development. You may also want to add a *Description** and **Project name**, but it is up to you.
+2. It is worth putting your **name** within the **Copyright Notice** text box, in the Legal section, as it is added at the top of C++ files added during development. You may also want to add a **Description** and **Project name**, but it is up to you.
 
 3. **Close** the Project Settings window, using the ![Close Project Setting](./img/close_proj_setting.png)
 . 
