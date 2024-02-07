@@ -225,7 +225,7 @@ UCameraComponent  *Camera;
 
 :::info
 
-**Note**:  In UE5, within a header file, the ..generated.h include line should always be the last include, else UE5 will not function correctly.
+**Note**:  In UE5, within a header file, the **`.generated.h`** include line should always be the last include, else UE5 will not function correctly.
 
 :::
 
