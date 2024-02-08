@@ -711,4 +711,4 @@ If you review the size of the project after deleting the above folders, it will 
 
 2. Add a new input that when pressed toggles between "run" and "walk". When walking, halve the player speed. Do not change the const variable to achieve this.
 
-3. Fix the issue where the movement doesn't rotate with the object. You will need the **GetActorForwardsVector** and **GetActorRightVector** functions to achieve this.
+3. Fix the issue where the movement doesn't rotate with the object. You will need the **GetActorForwardsVector()** and **GetActorRightVector()** functions to achieve this.
