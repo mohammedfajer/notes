@@ -15,6 +15,11 @@ import IMC1 from './img/imc_1.png';
 import IMC2 from './img/imc_2.png';
 import IMC3 from './img/imc_3.png';
 import IMC4 from './img/imc_4.png';
+
+import UE5_MODIFIERS from './img/ue5_modifier.png';
+
+
+
 import IMC_Assign from './img/assign_input_content.png';
 
 # Week 1 - Introduction to UE5
@@ -585,13 +590,17 @@ To setup the Mapping Context, you need to create and initialize as the following
 </div>
 
 3. Assign the **Modifiers**
-<div class="image-container">
-<img src={IMC3} width={"97%"} alt="React Logo" />
-</div>
 
 <div class="image-container">
-<img src={IMC4} width={"90%"} alt="React Logo" />
+<img src={UE5_MODIFIERS} width={"90%"} alt="React Logo" />
 </div>
+
+
+
+
+
+
+
 
 4. The final step is to assign the assets you created for the **Input Actions** and **Input Mapping Context** to the Pawn script pointer variables we created in **GD_Pawn.h**. 
 
