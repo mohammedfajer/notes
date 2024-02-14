@@ -556,7 +556,7 @@ Firstly, we will revert to having the UE5 Editor separately controlled to VS2022
 
     This is the same idea as binding your inputs like you have done previously.
 
-    **Note:: Intellisense will not find this, but it does exist. This is because it is a macro, not a function**.
+    **Note: Intellisense will not find this, but it does exist. This is because it is a macro, not a function**.
 
 
 5. Also add a stub function - i.e. defined, but it does NOT do anything - for **OnHit**.
