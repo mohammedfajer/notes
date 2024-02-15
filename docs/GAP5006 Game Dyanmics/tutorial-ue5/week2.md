@@ -31,7 +31,7 @@ Do the following:
 
 2. Open project **GDyn1**. (Alternatively, double-click on the **GDyn1.uproject** file, in the folder where you stored the project from the previous worksheet). The previous UE5 project should be opened with the default **GDMap** setup displayed.
 
-3. It is good practice to refresh the **VS** files, on openning a UE5 C++ project. Do this through **Tools -> Refresh Visual Studio Project**.
+3. It is good practice to refresh the **VS** files, on opening a UE5 C++ project. Do this through **Tools -> Refresh Visual Studio Project**.
 
 
 
@@ -103,11 +103,11 @@ Now that we've created two methods to respond to mouse movements and bound them 
 
 #### Turn Method
 
-- **Turn(..)** method should use the **`FInputActionValue`** paramter to receive input and extract the axis value from it using `Value.Get<FInputActionValue::Axis1D>()`. 
-- Define a turn rate varaible **TurnRate** to control how fast the pawn turns. Adjust this value as needed.
-- Calcuate the amount of turn based on the axis value, turn rate, and the delta time from **`GetWorld()->GetDeltaSeconds()`**.
+- **Turn(..)** method should use the **`FInputActionValue`** parameter to receive input and extract the axis value from it using `Value.Get<FInputActionValue::Axis1D>()`. 
+- Define a turn rate variable **TurnRate** to control how fast the pawn turns. Adjust this value as needed.
+- Calculate the amount of turn based on the axis value, turn rate, and the delta time from **`GetWorld()->GetDeltaSeconds()`**.
 - Get the current rotation of the pawn using **GetActorRotation()**.
-- Update the <u>Yaw</u> component of the rotation (`NewRotation.Yaw`) by adding the calucated turn amount.
+- Update the <u>Yaw</u> component of the rotation (`NewRotation.Yaw`) by adding the calculated turn amount.
 - Finally set the new rotation of the pawn using **`SetActorRotation(NewRotation)`**.
 
 The following is a simple **pseudocode** (not real code) to illustrate the points.
@@ -125,12 +125,12 @@ End Function
 
 #### Lookup Method
 
-- **Lookup(..)** method should use the **`FInputActionValue`** paramter to receive input and extract the axis value from it using `Value.Get<FInputActionValue::Axis1D>()`. 
+- **Lookup(..)** method should use the **`FInputActionValue`** parameter to receive input and extract the axis value from it using `Value.Get<FInputActionValue::Axis1D>()`. 
 - Define a look rate variable **LookRate** to control how fast the camera rotates. Adjust this value as needed.
 - Calculate the amount of rotation based on the axis value, look rate, and delta time from **`GetWorld()->GetDeltaSeconds()`**.
 - Get the current rotation of the camera component using **`Camera->GetComponentRotation()`**.
 - Update the <u>Pitch</u> component of the rotation, clamping it between -60 and -20 degrees to limit the camera's vertical movement.
-- Set the new rotation of the camera component usinng **`Camera->SetWorldRotation(NewCameraRotation)`**;
+- Set the new rotation of the camera component using **`Camera->SetWorldRotation(NewCameraRotation)`**;
 
 
 
@@ -148,7 +148,7 @@ End Function
 ```
 
 
-2. Within hte UE5 Editor, **Compile** the program. Play the game and move the mouse to rotate the object and also move the `pitch` rotation of the camera up and down. Make sure to **Save**.
+2. Within the UE5 Editor, **Compile** the program. Play the game and move the mouse to rotate the object and also move the `pitch` rotation of the camera up and down. Make sure to **Save**.
 
 
 :::info
@@ -160,7 +160,7 @@ At present, the object still only moves vertically / horizontally.  It would be 
 
 ## Moving an Object in a Rotated Direction
 
-We need to know what the object's **direction** is. UE5 stores what is called a **`forward`** vector and a **`right`** vector for an Actor object. A Pawn object is an Actor, so we can use the actor's forward / right vectors to move in the correct directions. Alternatively we can use the `UStaticMeshComponent` i.e. **VisibleComponent** forward and right vectors to achive the same behaviour.
+We need to know what the object's **direction** is. UE5 stores what is called a **`forward`** vector and a **`right`** vector for an Actor object. A Pawn object is an Actor, so we can use the actor's forward / right vectors to move in the correct directions. Alternatively we can use the `UStaticMeshComponent` i.e. **VisibleComponent** forward and right vectors to achieve the same behaviour.
 
 Unreal Engine uses a rare **left-handed**, Z-up coordinate system, this is inconveniently divergent from most other popular 3D software packages and commonly used game engines, but different doesn't mean wrong.
 
@@ -326,7 +326,7 @@ It would be useful to be able to put breakpoints within the project to check whe
 <img src={VS_STOP} width={"2%"} alt="Refresh VS" />
 </div>
 
-7. Right-click onver the Breakpoint and select the **Conditions** ... option. 
+7. Right-click over the Breakpoint and select the **Conditions** ... option. 
 
 8. Type in `ForwardVector.X != 0` in the condition field, as show below. This a dummy example, you can set it to different conditions to see its behaviour.
 
@@ -436,7 +436,7 @@ It would be useful to **`fire`** projectiles in the direction the player object 
 
     - Finally for the constructor, we need to tell the **projectile movement component** what it needs to move! This will be our root component (the collision component). The function you need is **`SetUpdatedComponent()`**. 
 
-6. Add the **`FireInDirection()`** function code, in **Projectile.cpp**. Because you pass in the direction you want to fire in, this is as simple as setting the velocity in the projectile movement component to be the normalised direction multiplied by our speed.
+6. Add the **`FireInDirection()`** function code, in **Projectile.cpp**. Because you pass in the direction you want to fire in, this is as simple as setting the velocity in the projectile movement component to be the normalized direction multiplied by our speed.
 
 7. Build the project to check the code is valid.  Run the program to open the UE5 Editor.
 
@@ -606,7 +606,7 @@ Next, let’s spawn enemies within a specified area / volume.
     ```cpp
     FVector ASpawnEnemy::getRandomPtInVolume() {
         FVector spawnOrigin = whereToSpawn->Bounds.Origin;
-        Fvector spawnExtent = whereToSpawn->Bounds.BoxExtent;
+        FVector spawnExtent = whereToSpawn->Bounds.BoxExtent;
         return UKismetMathLibrary::RandomPointInBoundingBox(spawnOrigin, spawnExtent);
     }
     ```
