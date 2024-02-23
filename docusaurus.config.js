@@ -31,7 +31,7 @@ const config = {
   url:  process.env.WIKI_URL, //process.env.WIKI_URL, 'https://your-docusaurus-test-site.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.WIKI_BASE_URL , //  process.env.WIKI_BASE_URL '/',
+  baseUrl: process.env.WIKI_BASE_URL, //  process.env.WIKI_BASE_URL '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

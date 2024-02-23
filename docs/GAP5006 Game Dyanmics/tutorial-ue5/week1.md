@@ -702,6 +702,11 @@ You can safely **delete** the following folders : **.vs** and **Binaries** and *
 
 If you review the size of the project after deleting the above folders, it will probably be in low MB!
 
+:::tip
+
+Alternatively you can ask UE5 to generate the `.zip` file for you. You can go to **`File`** then **`Zip Project`** then will prompt you to choose a location to save your file to.
+:::
+
 ## Bonus Tasks
 
 
