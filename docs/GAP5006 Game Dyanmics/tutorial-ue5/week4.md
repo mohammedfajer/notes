@@ -1,3 +1,6 @@
+
+
+import W4Pic0 from './img/W4Pic0.png';
 import PIC1 from './img/pic1.png';
 import PIC2 from './img/pic2.png';
 import PIC3 from './img/pic3.png';
@@ -21,6 +24,12 @@ import PIC14 from './img/pic14.png';
 Task Sheet 4 - Using **Animation Blueprints** by creating logic in **Anim Graph** and **Event Graph**.
 
 :::
+
+<div class="image-container">
+<img src={W4Pic0} width={"90%"} alt="Picture 0" />
+</div>
+
+
 
 ## Adding 3D Models and Objects
 
