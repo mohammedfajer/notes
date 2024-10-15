@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknotes=self.webpackChunknotes||[]).push([[903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog","blogTitle":"Blog","authorsListPath":"/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/authors"}')}}]);

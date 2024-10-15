@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknotes=self.webpackChunknotes||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/notes/3b5e95ffbb5780e88fb2ad9652b2eb9aadead95d/blog/welcome","unlisted":false,"date":"2021-08-10T00:00:00.000Z"}]}')}}]);
